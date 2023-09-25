@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
-mongoose.connect('mongodb://localhost/catalogDB', {
+mongoose.connect('mongodb://127.0.0.1:27017/catalogDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
@@ -24,7 +24,7 @@ app.get('/sync/categories', async (req, res) => {
   try {
     const response = await axios.get('https://stageapi.monkcommerce.app/task/categories', {
       headers: {
-        'x-api-key': 'YOUR_API_KEY',
+        'x-api-key': 'xmja813nd8as88po',
       },
     });
 
@@ -47,7 +47,7 @@ app.get('/sync/products/:categoryID', async (req, res) => {
   try {
     const response = await axios.get(`https://stageapi.monkcommerce.app/task/products?categoryID=${categoryID}`, {
       headers: {
-        'x-api-key': 'YOUR_API_KEY',
+        'x-api-key': 'xmja813nd8as88po',
       },
     });
 
